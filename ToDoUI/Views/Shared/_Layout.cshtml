@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/register")
+    @Styles.Render("~/Content/login")
+    @Styles.Render("~/Content/Theme/todoList")
+
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Theme/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Content/Theme/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link href="~/Content/Theme/css/tasks.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/Theme/css/style.css" rel="stylesheet">
+    <link href="~/Content/Theme/css/style-responsive.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.Label("ToDo App", new { @class = "navbar-brand label"})*@
+                <label class="label navbar-brand" style="width:50px; height:35px; font-family:'Comic Sans MS';font-size: medium;float:left;">ToDo App</label>
+            </div>
+            <div class="navbar-collapse collapse" style="margin-left:100px;">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Theme/todoList")
+    @Scripts.Render("~/bundles/Theme/todoListJquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
