@@ -27,7 +27,7 @@ namespace ToDoApi.Controllers
         [HttpPost]
         public IHttpActionResult UserLogin(User user)
         {
-            try
+            try//eğer eşitse
             {
                 if (db.Users.Any(i=>i.Email==user.Email && i.Password==user.Password))
                 {
